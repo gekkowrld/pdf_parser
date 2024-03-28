@@ -733,7 +733,9 @@ func checkXrefTrailer(xref [][]byte) bool {
 func getPreTrailerData(block []byte) ([]byte, []byte) {
 	reg := "(?mU)([a-fA-F0-9]*)747261696c6572(0d0a|0d|0a)([a-fA-F0-9]*)$"
 	resp := parseRegex(reg, block)
-
+	if len(resp) < 1{
+			return nil, nil
+	}
 	return block[:resp[0][3]], block[resp[0][3]:]
 }
 
