@@ -1,4 +1,4 @@
-module github.com/flotzilla/pdf_parser
+module github.com/gekkowrld/pdf_parser
 
 go 1.14
 
